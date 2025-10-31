@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Book Title — Hero</title>
+    <style>
+      :root {
+        --max-width: 1100px;
+        --gap: 32px;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto,
+          "Helvetica Neue", Arial;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px;
+        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        color: #111;
+      }
+      .hero {
+        width: 100%;
+        max-width: var(--max-width);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--gap);
+        align-items: center;
+      }
+      /* Left column */
+      .hero-left {
+        padding: 28px;
+        /* background: rgba(255, 255, 255, 0.7); */
+        border-radius: 12px;
+        backdrop-filter: blur(6px);
+      }
+      .book-title {
+        font-size: clamp(1.6rem, 3.6vw, 2.4rem);
+        margin: 0 0 12px 0;
+        line-height: 1.05;
+      }
+      .book-desc {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 18px;
+        color: #333;
+      }
+      audio {
+        width: 100%;
+        max-width: 520px;
+        outline: none;
+      }
+      .audio-note {
+        font-size: 0.9rem;
+        color: #555;
+        font-style: italic;
+        margin-top: 6px;
+      }
+      /* Right column */
+      .hero-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cover {
+        width: 100%;
+        max-width: 360px;
+        box-shadow: 0 10px 30px rgba(20, 30, 50, 0.1);
+        border-radius: 8px;
+        object-fit: cover;
+      }
+      /* Responsive: stack vertically on narrow screens */
+      @media (max-width: 720px) {
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        .hero-left {
+          text-align: center;
+        }
+        .book-desc {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        audio {
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="hero" role="main">
+      <section class="hero-left">
+        <h1 class="book-title">The Lost</h1>
+        <p class="book-desc">
+          In a quiet coastal town, a librarian discovers a forgotten ledger that
+          maps the lives of its residents through the books they loved. As she
+          follows the ledger's threads, she uncovers lost promises, hidden
+          music, and a child's secret that could change everything. Each chapter
+          gently peels back layers of memory, exploring love, grief, and the
+          small acts of courage that stitch people together. With lyrical prose
+          and vivid scenes, the novel invites readers to consider how stories
+          shape identity and bind strangers into families.
+        </p>
+
+        <!-- Replace the src with your audio file (mp3/ogg). Keep controls for accessibility. -->
+        <audio controls preload="none">
+          <source src="audio.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        <p class="audio-note">Tap to play</p>
+      </section>
+
+      <aside class="hero-right" aria-hidden="false" con>
+        <!-- Replace cover.jpg with your book cover image. Prefer a high-res JPG/PNG. -->
+        <img
+          class="cover"
+          src="book cover.png"
+          alt="Book cover: The Ledger of Quiet Things"
+        />
+      </aside>
+    </main>
+  </body>
+</html>
